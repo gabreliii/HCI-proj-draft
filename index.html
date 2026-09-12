@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WarehousePro - Inventory & Order Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="loginScreen" class="login-screen">
+    <div class="login-card">
+        <div class="brand-mark">W</div>
+        <h1>WarehousePro</h1>
+        <p>Inventory & Order Management System</p>
+
+        <form id="loginForm">
+            <label>Username or Email</label>
+            <input type="text" id="username" placeholder="Enter username or email" required>
+
+            <label>Password</label>
+            <input type="password" id="password" placeholder="Enter password" required>
+
+            <div id="loginError" class="error-message"></div>
+            <button type="submit" class="primary-btn">Log In</button>
+        </form>
+
+        <small>Prototype login: use any username and password.</small>
+    </div>
+</div>
+
+<div id="app" class="app hidden">
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="logo-icon">W</div>
+            <div>
+                <strong>WarehousePro</strong>
+                <span>Management System</span>
+            </div>
+        </div>
+
+        <nav>
+            <p class="nav-label">MAIN</p>
+            <button class="nav-item active" data-page="dashboard"><span>⌂</span> Dashboard</button>
+            <button class="nav-item" data-page="inventory"><span>▣</span> Inventory</button>
+            <button class="nav-item" data-page="receiving"><span>↓</span> Receiving</button>
+            <button class="nav-item" data-page="orders"><span>☷</span> Orders & Picking</button>
+            <button class="nav-item" data-page="movement"><span>↕</span> Stock Movement</button>
+
+            <p class="nav-label">ANALYTICS</p>
+            <button class="nav-item" data-page="reports"><span>▥</span> Reports</button>
+            <button class="nav-item" data-page="notifications"><span>●</span> Notifications <b class="nav-badge">3</b></button>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <button class="nav-item" data-page="profile"><span>◎</span> My Profile</button>
+            <button id="logoutBtn" class="nav-item logout"><span>↪</span> Log Out</button>
+        </div>
+    </aside>
+
+    <main class="main">
+        <header class="topbar">
+            <button id="mobileMenu" class="mobile-menu">☰</button>
+            <div>
+                <h2 id="pageTitle">Dashboard</h2>
+                <p id="pageSubtitle">Here's what's happening in your warehouse today.</p>
+            </div>
+            <div class="top-actions">
+                <button class="icon-btn" data-page="notifications" title="Notifications">🔔<span class="notification-dot"></span></button>
+                <div class="user-menu">
+                    <div class="avatar">JD</div>
+                    <div>
+                        <strong>John Doe</strong>
+                        <span>Warehouse Staff</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section id="content" class="content"></section>
+    </main>
+</div>
+
+<div id="modal" class="modal hidden">
+    <div class="modal-card">
+        <button class="modal-close" onclick="closeModal()">×</button>
+        <div id="modalContent"></div>
+    </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
