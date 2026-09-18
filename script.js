@@ -1845,6 +1845,42 @@ document.addEventListener('click', (e) => {
     }
 });
 
+// Modal controller utilities
+function openModal(htmlContent) {
+    const modal = document.getElementById('modal');
+    const content = document.getElementById('modalContent');
+    if (!modal || !content) return;
+    content.innerHTML = htmlContent;
+    modal.classList.remove('hidden');
+}
+
+function closeModal() {
+    const modal = document.getElementById('modal');
+    if (modal) {
+        modal.classList.add('hidden');
+    }
+}
+
+window.openModal = openModal;
+window.closeModal = closeModal;
+
+// Close modal when pressing Escape
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeModal();
+    }
+});
+
+// Close modal when clicking on backdrop
+const modalOverlay = document.getElementById('modal');
+if (modalOverlay) {
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) {
+            closeModal();
+        }
+    });
+}
+
 // Boot application
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
