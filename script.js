@@ -1,4 +1,4 @@
-/**
+    /**
  * WarehousePro - Inventory & Order Management System
  * Core Application Script
  */
