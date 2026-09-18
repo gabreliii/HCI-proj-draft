@@ -1292,3 +1292,29 @@ td {
         grid-template-columns: 1fr;
     }
 }
+
+/* Accessible focus ring styling */
+:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+    .sidebar,
+    .topbar,
+    .btn,
+    .mobile-menu {
+        display: none !important;
+    }
+
+    .main {
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    .content {
+        padding: 0 !important;
+    }
+}
+
